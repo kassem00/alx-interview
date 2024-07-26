@@ -1,0 +1,28 @@
+#!/usr/bin/python3
+"""
+def pascal_triangle(n):
+"""
+"""
+(x + y)^row
+x=first element
+y=last element
+
+x^2 + xy + xy + y^2
+"""
+def pascal_triangle(n):
+    if n == 0:
+        return []
+    if n == 1:
+        return [1]
+
+    if n == 2:
+        return [1, 1]
+
+    li :list = []
+    for i in range(3, n):
+        if i == 3:
+            li.append(1)
+    li.append(1)
+    print(li)
+
+pascal_triangle(5)
