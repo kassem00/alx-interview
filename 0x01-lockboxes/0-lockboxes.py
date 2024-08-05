@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" lock box"""
+""" lock box """
 
 
 def canUnlockAll(boxes):
@@ -15,5 +15,5 @@ def canUnlockAll(boxes):
             if key < n and key not in opened:
                 opened.add(key)
                 keys.append(key)
-                
+
     return len(opened) == n
