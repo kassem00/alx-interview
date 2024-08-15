@@ -19,7 +19,7 @@ status_codes = {
 line_count = 0
 
 
-def print_stats():
+def print_stats() -> None:
     """Prints the statistics."""
     print("File size: {}".format(total_file_size))
     for code in sorted(status_codes.keys()):
