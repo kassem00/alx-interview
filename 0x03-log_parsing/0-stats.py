@@ -59,5 +59,6 @@ try:
 except Exception as e:
     pass
 
+
 finally:
     print_stats()
