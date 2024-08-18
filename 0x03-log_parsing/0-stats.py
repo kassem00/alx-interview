@@ -53,6 +53,10 @@ try:
             if line_count % 10 == 0:
                 print_stats()
 
+except KeyboardInterrupt:
+    print_stats()
+    sys.exit(0)
+
 except Exception as e:
     pass
 
