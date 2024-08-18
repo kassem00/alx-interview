@@ -20,7 +20,7 @@ line_count = 0
 
 # Regex pattern to match the correct line format
 log_pattern = re.compile(
-    r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} - \[\S+ \S+\]\
+    r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} - \[\S+ \S+\] \
     "GET /projects/260 HTTP/1.1" (\d{3}) (\d+)$'
 )
 
