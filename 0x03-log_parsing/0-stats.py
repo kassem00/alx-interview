@@ -3,7 +3,7 @@ import sys
 import signal
 import re
 
-# Initialize variables
+
 total_file_size = 0
 status_codes = {
     '200': 0,
@@ -17,7 +17,6 @@ status_codes = {
 }
 line_count = 0
 
-# Regex pattern to match the correct line format
 log_pattern = re.compile(
     r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3} - \[\S+ \S+\] "GET /projects/260 '
     r'HTTP/1.1" (\d{3}) (\d+)$'
@@ -38,8 +37,8 @@ def signal_handler(sig, frame):
     sys.exit(0)
 
 
-# Register the signal handler for CTRL+C
 signal.signal(signal.SIGINT, signal_handler)
+
 
 try:
     for line in sys.stdin:
