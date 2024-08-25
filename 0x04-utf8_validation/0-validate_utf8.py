@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+
 """
 This module contains a function to check if a list of integers
 represents a valid UTF-8 encoding.
