@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+
+
+""" valid UTF-8 encoding checker """
+
+
 def validUTF8(data: list[int]) -> bool:
     """ valid UTF-8 encoding checker """
     n_bytes = 0
