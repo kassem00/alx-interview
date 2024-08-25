@@ -2,12 +2,13 @@
 
 
 """
-This module contains a function to check if a list of integers
+This module contains a function to
+check if a list of integers
 represents a valid UTF-8 encoding.
 """
 
 
-def validUTF8(data: list[int]) -> bool:
+def validUTF8(data):
     """
     Check if a given data set represents a valid UTF-8 encoding.
 
