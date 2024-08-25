@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" valid UTF-8 encoding checker """
+"""
+valid UTF-8 encoding checker
+"""
 
 
 def validUTF8(data: list[int]) -> bool:
