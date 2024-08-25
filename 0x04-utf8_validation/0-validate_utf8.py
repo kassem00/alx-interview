@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-
 """ valid UTF-8 encoding checker """
 
 
