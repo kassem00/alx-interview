@@ -18,7 +18,19 @@ def NQueens(N: int) -> List[List[str]]:
 def dealing_with_user() -> int:
     """ it will get data from user """
     list_from_user:list = argv
+
     if len(list_from_user) != 2:
         exit("Usage: nqueens N")
+
+    if type(list_from_user[1] != int:
+        exit("N must be a number")
+
+    num = list_from_user[1]
+
+    if num < 4:
+        exit("N must be at least 4")
+    return num
+
+
 if __name__ == "__main__":
-    dealing_with_user()
+    print(dealing_with_user())
