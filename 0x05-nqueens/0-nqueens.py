@@ -22,10 +22,11 @@ def dealing_with_user() -> int:
     if len(list_from_user) != 2:
         exit("Usage: nqueens N")
 
-    if type(list_from_user[1] != int:
-        exit("N must be a number")
-
-    num = list_from_user[1]
+    try:
+        num = int(list_from_user[1])
+    except ValueError:
+        print("N must be a number")
+        exit(1)
 
     if num < 4:
         exit("N must be at least 4")
