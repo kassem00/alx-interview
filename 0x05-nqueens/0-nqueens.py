@@ -20,8 +20,8 @@ def dealing_with_user() -> int:
     list_from_user:list = argv
 
     if len(list_from_user) != 2:
-        exit("Usage: nqueens N")
-
+        print("Usage: nqueens N")
+        exit(1)
     try:
         num = int(list_from_user[1])
     except ValueError:
@@ -29,7 +29,8 @@ def dealing_with_user() -> int:
         exit(1)
 
     if num < 4:
-        exit("N must be at least 4")
+        print("N must be at least 4")
+        exit(1)
     return num
 
 
