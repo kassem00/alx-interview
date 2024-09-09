@@ -1,0 +1,6 @@
+data = fetch("https://swapi-api.alx-tools.com/api/planets/1/?format=json", {
+    method: 'GET',
+    headers: {
+	'Content-type': 'application/json'
+    },
+})

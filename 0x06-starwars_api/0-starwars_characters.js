@@ -1,26 +1,20 @@
 #!/usr/bin/node
 
-const request = require('request');
+const request = require('request-promise-native');
 const movieId = process.argv[2];
-const apiUrl = `https://swapi-api.hbtn.io/api/films/${movieId}/`;
+const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}/`;
 
-request(apiUrl, (error, response, body) => {
-  if (error) {
+(async () => {
+  try {
+    const filmData = await request(apiUrl);
+    const characters = JSON.parse(filmData).characters;
+
+
+    for (const characterUrl of characters) {
+      const characterData = await request(characterUrl);
+      console.log(JSON.parse(characterData).name);
+    }
+  } catch (error) {
     console.error(error);
-    return;
   }
-  const filmData = JSON.parse(body);
-  const characters = filmData.characters;
-
-  // Fetch each character's name in order
-  characters.forEach(characterUrl => {
-    request(characterUrl, (charError, charResponse, charBody) => {
-      if (charError) {
-        console.error(charError);
-        return;
-      }
-      const characterData = JSON.parse(charBody);
-      console.log(characterData.name);
-    });
-  });
-});
+})();
