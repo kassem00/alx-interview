@@ -14,6 +14,23 @@ def NQueens(N: int) -> List[List[str]]:
     postDIG = set() # r-c = constant
     negtDIG = set() # r+c = constant
 
+    for i in range(N):
+
+
+        def NOT_D(row: int, col: int, previce_queen_location: dict) -> bool:
+            """
+            N queens puzzle is the challenge of placing N queens 
+            in NxN squer
+            this function return true 
+            if location of quuen is not in danger with other quuens
+            it will return false if it in danger
+            """
+            cds =set() #previce queen location
+            postDIG = set() # r-c = constant
+            negtDIG = set() # r+c = constant
+            dead_row = set()
+            dead_column = set()
+
 
 def dealing_with_user() -> int:
     """ it will get data from user """
@@ -35,4 +52,4 @@ def dealing_with_user() -> int:
 
 
 if __name__ == "__main__":
-    print(dealing_with_user())
+     num = dealing_with_user()
