@@ -8,7 +8,6 @@ def island_perimeter(grid):
     """
     island_perimeter
     """
-    x: int= 0
     perimeter = 0
 
     for row in range(len(grid)):
@@ -31,25 +30,25 @@ def posetion(grid, row, column):
     max_right = 0
     max_up = 0
     max_down = len(grid)
-    dirction = ['r', 'l', 'u','d']
+    dirction = ['r', 'l', 'u', 'd']
 
     for d in dirction:
         if d == 'r':
-             if column != max_right:
-                 if grid[row][column - 1] == 1:
-                     pram -= 1
+            if column != max_right:
+                if grid[row][column - 1] == 1:
+                    pram -= 1
 
         if d == 'l':
-             if column != max_left:
-                 if grid[row][column + 1] == 1:
-                     pram -= 1
+            if column != max_left:
+                if grid[row][column + 1] == 1:
+                    pram -= 1
 
         if d == 'u':
             if row != max_up:
-                 if grid[row -1][column] == 1:
-                     pram -= 1
+                if grid[row - 1][column] == 1:
+                    pram -= 1
         if d == 'd':
             if row != max_down:
-                 if grid[row + 1][column] == 1:
-                     pram -= 1
+                if grid[row + 1][column] == 1:
+                    pram -= 1
     return pram
