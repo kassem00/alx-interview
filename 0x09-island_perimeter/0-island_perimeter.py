@@ -17,6 +17,7 @@ def island_perimeter(grid):
                 perimeter = perimeter + posetion(grid, row, col)
     return perimeter
 
+
 def posetion(grid, row, column):
     """
     it looks around the element and find one
