@@ -19,22 +19,18 @@ def island_perimeter(grid):
                 max_up = 0
                 max_down = len(grid)
 
-                # Check left
                 if col != max_right:
                     if grid[row][col - 1] == 1:
                         pram -= 1
 
-                # Check right
                 if col != max_left:
                     if grid[row][col + 1] == 1:
                         pram -= 1
 
-                # Check up
                 if row != max_up:
                     if grid[row - 1][col] == 1:
                         pram -= 1
 
-                # Check down
                 if row != max_down:
                     if grid[row + 1][col] == 1:
                         pram -= 1
