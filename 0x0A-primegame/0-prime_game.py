@@ -1,12 +1,7 @@
-#!/usr/bin/python3
-"""Prime Game
-"""
-
-
 def sieve_of_eratosthenes(n):
     """ Returns a list of prime numbers up to n using the Sieve of Eratosthenes. """
     primes = [True] * (n + 1)
-    primes[0], primes[1] = False, False
+    primes[0], primes[1] = False, False  # 0 and 1 are not primes
     for i in range(2, int(n ** 0.5) + 1):
         if primes[i]:
             for j in range(i * i, n + 1, i):
@@ -18,20 +13,27 @@ def isWinner(x, nums):
     maria_wins = 0
     ben_wins = 0
 
+    # Loop through all rounds
     for n in nums:
         primes = sieve_of_eratosthenes(n)
         available_numbers = set(range(1, n + 1))
-        turns = 0
-        while primes:
-            prime = primes.pop(0)
-            for i in range(prime, n + 1, prime):
-                if i in available_numbers:
-                    available_numbers.remove(i)
-            turns ^= 1
-            if not available_numbers or not any(i in available_numbers for i in primes):
-                break
+        current_turn = 0  # 0 means Maria's turn, 1 means Ben's turn
         
-        if turns == 0:
+        while primes:
+            # The player whose turn it is picks the smallest prime number
+            prime = primes.pop(0)
+            # Remove the prime and all of its multiples from the set
+            to_remove = set(range(prime, n + 1, prime))
+            available_numbers -= to_remove
+            
+            # After the removal, check if there are still primes available to pick
+            if not available_numbers:
+                break
+            # Switch turns
+            current_turn ^= 1
+        
+        # If current_turn is 0, Maria won, otherwise Ben won
+        if current_turn == 0:
             maria_wins += 1
         else:
             ben_wins += 1
